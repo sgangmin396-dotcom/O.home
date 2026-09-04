@@ -35,7 +35,8 @@ export default function MainPage() {
     if (!MULTI_TYPES.includes(addType) && state.widgets.some(w => w.type === addType)) setAddType('freetext');
   }, [addOpen]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const enabled = state.widgets.filter(w => w.enabled);
+  // 회원정보창은 상단바 오른쪽 회원 메뉴로 대체 — 메인에서 제거 (member 타입 숨김)
+  const enabled = state.widgets.filter(w => w.enabled && w.type !== 'member');
   const byCol = (c: 1 | 2 | 3) => enabled.filter(w => w.col === c);
   const mOrder = (id: string) => {
     const i = state.mobileOrder.indexOf(id);
@@ -162,7 +163,7 @@ export default function MainPage() {
             <button onClick={() => zOp('top')}>맨위로</button>
             <button onClick={() => zOp('up')}>위로</button>
             <button onClick={() => zOp('down')}>아래로</button>
-            <button onClick={() => zOp('bottom')}>맨아래로</button>
+            <button onClick={() => zOp('bottom')}>맨��래로</button>
             {/* 텍스트·이미지 같은 장식 요소를 그리드에 안 붙게 자유 배치 (v1.9 사용자 확정) */}
             <button onClick={() => { updateWidget(me.id, { freeMove: !me.freeMove }); setCtx(null); }}>
               {me.freeMove ? '그리드 반영' : '그리드 무시'}
