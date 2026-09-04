@@ -92,7 +92,7 @@ export const DARK_THEME: ThemeVars = {
 
 /** 라이트 모드 — 호버 글씨색은 흰 배경에서도 보이는 색 (v1.9) */
 export const LIGHT_THEME: ThemeVars = {
-  bgG1: '#f2f3f5', bgG2: '#dfe1e6',
+  bgG1: '#ffffff', bgG2: '#ffffff',
   bgType: 'gradient', bgAngle: 180, bgBlur: 0,
   cardBg: '#fbfbfc', cardFg: '#1d2025',
   topBg: '#fbfbfc', topFg: '#5d636d', topHv: '#a63a45', topBrand: '#2b3038',
@@ -186,7 +186,7 @@ export function defaultVarsFor(mode: ThemeMode, accent: string, tone: PointTone)
 }
 
 export const DEFAULT_THEME_STORE: ThemeStore = {
-  mode: 'dark', pointTone: 'dark', pointAccent: '#a63a45',
+  mode: 'light', pointTone: 'dark', pointAccent: '#a63a45',
   perMode: {
     light: LIGHT_THEME,
     dark: DARK_THEME,
@@ -269,7 +269,7 @@ export function themeToCssVars(t: ThemeVars): Record<string, string> {
     '--seg-bg': t.segBg ?? '#f0f1f3',
     '--seg-fg': t.segFg ?? '#8a8f98',
     // 위젯 (v2.0 사용자 요청) — 안 정하면 카드 색을 그대로 따라간다(지금까지의 모습).
-    // 배경만 반투명 처리하는 것은 카드와 같은 규칙 — 배경 이미지를 깔았을 때 비쳐 보이게 한다
+    // 배경만 ���투명 처리하는 것은 카드와 같은 규칙 — 배경 이미지를 깔았을 때 비쳐 보이게 한다
     '--wg-bg': t.wgBg ? withAlpha(t.wgBg, 0.94) : withAlpha(t.cardBg ?? '#fcfcfd', 0.94),
     '--wg-title': t.wgTitle ?? 'var(--faint)',
     '--wg-fg': t.wgFg ?? 'var(--ink)',

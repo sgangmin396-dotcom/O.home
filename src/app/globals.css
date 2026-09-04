@@ -17,7 +17,7 @@
   /* 역할 폰트 크기 배율 — 모든 font-size는 calc(Npx*var(--fs,1)) 형태, --fs는 영역별로 재지정 */
   --fs:var(--fs-body,1);
   /* 테마 변수 — 환경설정 > 디자인에서 변경 (기본 = 다크 모드) */
-  --bg-g1:#2b3038; --bg-g2:#121418;
+  --bg-g1:#ffffff; --bg-g2:#ffffff;
   --top-bg:rgba(20,22,27,.82); --top-fg:#aab0ba; --top-hv:#ffffff; --top-brand:#f2f3f5;
   --dd-bg:rgba(28,31,37,.97); --dd-fg:#c6cad1; --dd-hv:rgba(255,255,255,.1);
   --page-title:#eceef1; --page-desc:#9aa0a9;
@@ -199,7 +199,7 @@ a{color:inherit;text-decoration:none}
 .vol i::after{content:"";position:absolute;right:-4px;top:-3.5px;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.5)}
 
 /* ---------- 공통 레이아웃 ---------- */
-/* 하단 여백은 BGM 미니 플레이어(약 73px)를 가리지 않는 최소치 — 과하면 불필요한 스크롤 발생 */
+/* 하단 여백은 BGM 미니 플레이어(약 73px)를 가리지 않는 최소치 — 과��면 불필요한 스크롤 발생 */
 .page{max-width:1180px;margin:0 auto;padding:16px 28px 80px;animation:fade .35s}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
 /* min-height: 우측 액션은 절대배치라 헤더 높이에 안 잡힌다 — 헤더가 짧아지면(설명 숨김·제목 숨김

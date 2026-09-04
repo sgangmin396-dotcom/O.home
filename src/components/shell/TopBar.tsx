@@ -8,7 +8,6 @@ import { boardEntries, useMenuSettings, buildMenu } from '@/lib/menuStore';
 import { useBoards } from '@/lib/boardStore';
 import { useSections, sectionMenuEntries } from '@/lib/sectionStore';
 import { useCustomLinks, linkEntries } from '@/lib/linkStore';
-import { useSiteSettings } from '@/lib/siteStore';
 import { useAuth } from '@/lib/auth';
 import { useMainStore } from '@/lib/mainStore';
 import { useBlobUrl } from '@/lib/blobStore';
@@ -45,7 +44,6 @@ export function TopBar() {
   const menu = ready
     ? buildMenu(menuSet, [...boardEntries(boards), ...sectionMenuEntries(secMap), ...linkEntries(links)], { loggedIn: !!user, isAdmin, id: user?.id })
     : [];
-  const [site, , siteLoaded] = useSiteSettings();    // 로고 텍스트/서브/정렬 (5.2)
   const avatarSrc = useBlobUrl(user?.avatarUrl);     // 프로필 이미지 (마이페이지, v1.9)
   const userRef = useRef<HTMLDivElement>(null);
 
@@ -147,12 +145,6 @@ export function TopBar() {
 
   return (
     <header className="topbar">
-      {/* 로고 — 텍스트·서브타이틀·정렬은 환경설정 > 디자인 (5.2) */}
-      <div className="brand" onClick={() => nav('/')}>
-        {siteLoaded && site.title}
-        {siteLoaded && site.subtitle && <small className={`al-${site.align}`}>{site.subtitle}</small>}
-      </div>
-
       <nav className="gnb" ref={gnbRef}>
         {visMenu.map(item =>
           item.children ? (
