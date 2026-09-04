@@ -32,7 +32,7 @@ export const FEATURES: { href: string; label: string }[] = [
 
 export const DEFAULT_MENU: MenuItem[] = [
   {
-    label: '자놀',
+    label: '임시',
     children: [
       { label: '캐릭터', href: '/chars' },
       { label: '자관', href: '/rels' },
@@ -40,7 +40,7 @@ export const DEFAULT_MENU: MenuItem[] = [
     ],
   },
   {
-    label: '게시판',
+    label: '임시',
     children: [
       { label: '리스트', href: '/board' },
       { label: '갤러리', href: '/gallery' },
@@ -48,7 +48,7 @@ export const DEFAULT_MENU: MenuItem[] = [
     ],
   },
   {
-    label: 'TRPG',
+    label: '임시',
     children: [
       { label: '캐릭터', href: '/tchars' },
       { label: '로그 백업', href: '/trpg' },
@@ -57,14 +57,14 @@ export const DEFAULT_MENU: MenuItem[] = [
     ],
   },
   {
-    label: '커미션',
+    label: '임시',
     children: [
       { label: '커미션', href: '/comm' },
       { label: '신청자 리스트', href: '/comm-apply' },
     ],
   },
   {
-    label: '기록',
+    label: '임시',
     children: [
       { label: '스케줄러', href: '/cal' },
       { label: '다이어리', href: '/diary' },
@@ -72,5 +72,5 @@ export const DEFAULT_MENU: MenuItem[] = [
       { label: '메모장', href: '/memo' },
     ],
   },
-  { label: '방명록', href: '/guest' },
+  { label: '임시', href: '/guest' },
 ];
